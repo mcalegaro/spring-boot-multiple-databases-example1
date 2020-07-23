@@ -2,6 +2,14 @@ spring:
   profiles:
     active:
     - ${AMBIENTE:dev} 
+  jpa:
+    database: default
+    properties:
+      hibernate:
+#        show_sql: true
+        globally_quoted_identifiers: true
+#        dialect: org.hibernate.dialect.OracleDialect
+  main.allow-bean-definition-overriding: true
     
 primary:
   datasource:
@@ -16,8 +24,6 @@ primary:
 #    username: user
 #    password: 
 #    driverClassName: org.h2.Driver
-    
-spring.main.allow-bean-definition-overriding: true
 
 ---
 spring: 

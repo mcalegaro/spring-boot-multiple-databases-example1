@@ -18,7 +18,7 @@ public class SecondaryDatabaseConfigurationTest extends SecondaryDatabaseConfigu
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder,
 			@Qualifier("secondaryDataSource") DataSource dataSource) {
 		Map<String, String> properties = new HashMap<String, String>();
-		properties.put("hibernate.hbm2ddl.auto", "create");
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		return builder.dataSource(dataSource).properties(properties).packages(MyEntity.class).build();
 	}
 
